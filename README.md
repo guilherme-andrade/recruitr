@@ -63,6 +63,7 @@ In this application the following libraries were used on top of ActionView:
 - `StimulusJS` - Basecamp's lightweight JS framework
 - `StimulusReflex` - a rapidly growing Rails library based on Phoenix's Live View built on top of Morphdom, Stimulus and CableReady.
 - `ViewComponentReflex` - a library to add StimulusReflex to ViewComponents.
+- `Bootstrap 5` - for styles
 
 These 4 libraries in conjunction make it so that the usual Rails views are better organized, and faster than a virtual DOM, at a fraction of the effort.
 
@@ -80,4 +81,16 @@ Here I used:
 
 ## Demo
 
+You can see find video demo [here](https://www.loom.com/share/01707ae7a99942979a006280f91c2cba).
 
+The views are based on the screenshots from the project description and allow a user to:
+
+- Login/Register.
+- View all Job Offers.
+- Create a new Job Offer.
+- View a Job Offer and all its applications.
+- Add existing or new applicants for a job offer.
+- View a candidate and all its applications.
+- Create appointments between recruiters and applicants regarding a specific job offer.
+
+In the last point, I adapted the logic slightly, by automatically selecting the **available recruiter** that suits the position the best, meaning that has the most skills in common with it.

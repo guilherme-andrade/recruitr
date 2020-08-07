@@ -1,7 +1,7 @@
 <div class="modal fade" id="<%= @id %>" tabindex="-1" aria-labelledby="<%= @id %>" aria-hidden="true">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-lg">
     <div class="modal-content">
-      <div class="modal-body">
+      <div class="modal-body p-5">
         <h2>Add an applicant</h2>
 
         <%= simple_form_for [@job_offer, @application] do |f| %>
@@ -13,7 +13,7 @@
             <%= af.input :email %>
             <%= af.input :skill_list, as: :check_boxes, collection: Applicant.skill_options %>
           <% end %>
-          <%= f.submit 'Create Applicant', class: 'btn btn-black' %>
+          <%= f.submit 'Create Applicant', class: 'btn btn-primary' %>
         <% end %>
 
         <hr>
@@ -21,7 +21,7 @@
         <%= simple_form_for [@job_offer, @application] do |f| %>
           <%= f.input :applicant_id, as: :select, label_method: :full_name, collection: Applicant.all, label: 'Or pick an existing one' %>
 
-          <%= f.submit 'Add Applicant', class: 'btn btn-black' %>
+          <%= f.submit 'Add Applicant', class: 'btn btn-secondary' %>
         <% end %>
       </div>
     </div>

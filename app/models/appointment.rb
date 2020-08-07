@@ -9,7 +9,7 @@ class Appointment < ApplicationRecord
   end
 
   def recruiter_match_percentage
-    recruiter_matching_skills.count.to_f / application.job_offer_skill_list.count * 100
+    (recruiter_matching_skills.count.to_f / application.job_offer_skill_list.count * 100).round
   end
 
   def recruiter_matching_skills

@@ -6,7 +6,7 @@
 
 // Color system
 
-$white:    #fff !default;
+$white:    #f1f5f9 !default;
 $gray-100: #f8f9fa !default;
 $gray-200: #e9ecef !default;
 $gray-300: #dee2e6 !default;
@@ -32,7 +32,7 @@ $grays: (
 ) !default;
 // fusv-enable
 
-$blue:    #0d6efd !default;
+$blue:    #172b4e !default;
 $indigo:  #6610f2 !default;
 $purple:  #6f42c1 !default;
 $pink:    #d63384 !default;
@@ -41,11 +41,11 @@ $orange:  #fd7e14 !default;
 $yellow:  #ffc107 !default;
 $green:   #28a745 !default;
 $teal:    #20c997 !default;
-$cyan:    #17a2b8 !default;
+$cyan:    #2CB7C5 !default;
 
 // scss-docs-start colors-map
 $colors: (
-  "blue":       $blue,
+  "blue":       $cyan,
   "indigo":     $indigo,
   "purple":     $purple,
   "pink":       $pink,
@@ -61,7 +61,7 @@ $colors: (
 ) !default;
 // scss-docs-end colors-map
 
-$primary:       $blue !default;
+$primary:       $indigo !default;
 $secondary:     $gray-600 !default;
 $success:       $green !default;
 $info:          $cyan !default;
@@ -91,7 +91,7 @@ $theme-color-interval: 8% !default;
 
 // The contrast ratio to reach against white, to determine if color changes from "light" to "dark". Acceptable values for WCAG 2.0 are 3, 4.5 and 7.
 // See https://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast
-$min-contrast-ratio:   3 !default;
+$min-contrast-ratio:   1 !default;
 
 // Customize the light and dark text colors for use in our color contrast function.
 $color-contrast-dark:      $gray-900 !default;
@@ -401,7 +401,7 @@ $font-family-code:            var(--bs-font-monospace) !default;
 // $font-size-root effects the value of `rem`, which is used for as well font sizes, paddings and margins
 // $font-size-base effects the font size of the body text
 $font-size-root:              null !default;
-$font-size-base:              .9rem !default; // Assumes the browser default, typically `16px`
+$font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
 $font-size-sm:                $font-size-base * .60 !default;
 $font-size-lg:                $font-size-base * 1.25 !default;
 
@@ -417,7 +417,7 @@ $line-height-base:            1.5 !default;
 $line-height-sm:              1.25 !default;
 $line-height-lg:              2 !default;
 
-$h1-font-size:                $font-size-base * 2.5 !default;
+$h1-font-size:                $font-size-base * 4 !default;
 $h2-font-size:                $font-size-base * 2 !default;
 $h3-font-size:                $font-size-base * 1.75 !default;
 $h4-font-size:                $font-size-base * 1.5 !default;
@@ -427,7 +427,7 @@ $h6-font-size:                $font-size-base !default;
 $headings-margin-bottom:      $spacer !default;
 $headings-font-family:        null !default;
 $headings-font-style:         null !default;
-$headings-font-weight:        $font-weight-bold !default;
+$headings-font-weight:        $font-weight-bolder !default;
 $headings-line-height:        1.2 !default;
 $headings-color:              null !default;
 

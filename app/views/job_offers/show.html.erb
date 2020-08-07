@@ -4,7 +4,7 @@
 
 <hr class="mt-6 mb-6">
 
-<%= link_to 'New Application', '#', class: 'btn btn-black', data: { toggle: 'modal', target: '#application-modal' } %>
+<%= link_to 'New Application', '#', class: 'btn btn-primary', data: { toggle: 'modal', target: '#application-modal' } %>
 
 <%= render(JobOffers::ApplicationModalComponent.new(job_offer: @job_offer, id: 'application-modal')) %>
 

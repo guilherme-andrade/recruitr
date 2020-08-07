@@ -13,6 +13,6 @@ class Application < ApplicationRecord
 
   def match_rate
     matching_skill_list = applicant_skill_list & job_offer_skill_list
-    (matching_skill_list.count.to_f / job_offer_skill_list.count) * 100
+    ((matching_skill_list.count.to_f / job_offer_skill_list.count) * 100).round
   end
 end

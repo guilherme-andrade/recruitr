@@ -7,6 +7,14 @@
       <li class="nav-item ml-5">
         <%= link_to 'job offers', job_offers_path, class: 'nav-link' %>
       </li>
+
+      <li class="nav-item ml-5">
+        <% if user_signed_in? %>
+          <%= link_to 'log out', destroy_user_session_path, method: :delete, class: 'nav-link font-weight-bold' %>
+        <% else %>
+          <%= link_to 'log in', new_user_session_path, class: 'nav-link font-weight-bold' %>
+        <% end %>
+      </li>
     </ul>
   </div>
 </nav>
