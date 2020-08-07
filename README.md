@@ -19,14 +19,14 @@ yarn install
 ```
 rails db:create db:migrate db:seed
 ```
-> 📝_The seeds replicate pretty much the whole application logic and are a good basis to understand how models are inter-connected._
+> 📝 *The seeds replicate pretty much the whole application logic and are a good basis to understand how models are inter-connected.*
 
 ### Run the application
 
 ```
 foreman start
 ```
-> 📝_Foreman uses a simple Procfile configuration to start all required runtime processes, apart from the postgres database._
+> 📝 *Foreman uses a simple Procfile configuration to start all required runtime processes, apart from the postgres database.*
 
 <hr>
 
