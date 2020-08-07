@@ -97,3 +97,18 @@ The views are based on the screenshots from the project description and allow a 
 In the last point, I adapted the logic slightly, by automatically selecting the **available recruiter** that has the **most skills** in common with the Job Offer.
 
 This logic is present in the [`OrganizeAppointment`](https://github.com/guilherme-andrade/recruitr/blob/master/app/interactors/organize_appointment.rb) organizer and it's organizers.
+
+
+<br>
+
+## Given more time, what would I have done better?
+
+> *These are things that are simple for the most part, and I made the choise to leave them out of the specs.*
+
+1. Add validations to models.
+2. Add flash messages for user feedback.
+3. Stub the GoogleApiServices so you could run it in your environment without my credentials - this I just forgot to be honest, would've been cool to do.
+4. The overall style is messy.
+5. Add some more context failures to interactors.
+6. Stub Mailers.
+7. Remove more unused files and gems - I used this [boilerplate](https://github.com/guilherme-andrade/boilerplates/tree/master/sheen) I created and, at first, I scaffolded some useless controllers which was a mistake.
