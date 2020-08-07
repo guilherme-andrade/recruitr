@@ -101,12 +101,26 @@ This logic is present in the [`OrganizeAppointment`](https://github.com/guilherm
 
 <br>
 
+## What should you spend the most time Reviewing?
+
+In my opinion, following files/folders:
+
+- [app/components/applicants/applications_table/application_component.rb](https://github.com/guilherme-andrade/recruitr/blob/master/app/components/applicants/applications_table/application_component.rb)
+- [app/components/job_offers/applications_table/application_component.rb](https://github.com/guilherme-andrade/recruitr/blob/master/app/components/job_offers/applications_table/application_component.rb)
+- [app/interactors](https://github.com/guilherme-andrade/recruitr/tree/master/app/interactors)
+- [app/services/google_calendar](https://github.com/guilherme-andrade/recruitr/tree/master/app/services/google_calendar)
+- [db/seeds.rb](https://github.com/guilherme-andrade/recruitr/blob/master/db/seeds.rb)
+- [db/migrations](https://github.com/guilherme-andrade/recruitr/blob/master/db/migrations)
+
+<br>
+
 ## Given more time, what would I have done better?
 
 1. Add validations to models.
-2. Add flash messages for user feedback.
-3. Stub the GoogleApiServices so you could run it in your environment without my credentials - this I just forgot to be honest, would've been cool to do.
-4. The overall style is messy.
-5. Add some more context failures to interactors.
-6. Stub Mailers.
-7. Remove more unused files and gems - I used this [boilerplate](https://github.com/guilherme-andrade/boilerplates/tree/master/sheen) I created and, at first, I scaffolded some useless controllers which was a mistake.
+2. Added seniority level to all [`Skillable`](https://github.com/guilherme-andrade/recruitr/blob/master/app/models/concerns/skillable.rb) models.
+3. Add flash messages for user feedback.
+4. Stub the GoogleApiServices so you could run it in your environment without my credentials - this I just forgot to be honest, would've been cool to do.
+5. The overall style is messy.
+6. Add some more context failures to interactors.
+7. Stub Mailers.
+8. Remove more unused files and gems - I used this [boilerplate](https://github.com/guilherme-andrade/boilerplates/tree/master/sheen) I created and, at first, I scaffolded some useless controllers which was a mistake.
