@@ -19,7 +19,7 @@ yarn install
 ```
 rails db:create db:migrate db:seed
 ```
-> 📝 *The seeds replicate pretty much the whole application logic and are a good basis to understand how models are inter-connected.*
+> 📝 *The seeds replicate pretty much the whole application logic, so `db/seeds.rb` is a good basis to understand the app.*
 
 ### Run the application
 
