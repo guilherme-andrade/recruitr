@@ -28,7 +28,9 @@ foreman start
 ```
 > 📝_Foreman uses a simple Procfile configuration to start all required runtime processes, apart from the postgres database._
 
+<br>
 <hr>
+<br>
 
 ## Authentication:
 
@@ -42,6 +44,9 @@ email: fake_hr@gmail.com
 password: 123456
 ```
 
+<br>
+<hr>
+<br>
 
 ## The Views:
 
