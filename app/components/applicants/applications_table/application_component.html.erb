@@ -1,0 +1,46 @@
+<%= component_controller do %>
+  <tr id="application-<%= collection_key %>">
+    <td>
+      <%= link_to @application.job_offer_name, @application.job_offer %>
+    </td>
+    <td class="text-muted font-italic">
+      <% @application.job_offer_skill_list.each do |skill| %>
+        <span class="mr-2">#<%= skill %></span>
+      <% end %>
+    </td>
+    <td class="text-right">
+      <%= @application.match_rate %>%
+    </td>
+    <td class="text-center">
+      <%= @appointment.persisted? ? 'yes' : 'no' %>
+    </td>
+    <td>
+      <%= appointed_recruiter_full_name %>
+    </td>
+    <td class="text-right">
+      <%= appointed_recruiter_match_percentage %>
+    </td>
+    <td class="text-right">
+      <% if @appointment.persisted? %>
+        <%= appointment_schedule %>
+      <% else %>
+        <div class="d-flex">
+          <%= reflex_tag(
+            'input->pick_start_time',
+            :input,
+            @appointment.start_time,
+            id: "start-time-#{@application.id}",
+            class: 'form-control mr-2',
+            data: {
+              controller: 'flatpickr',
+              flatpickr_date_format: 'Y-m-d - h:iK',
+              flatpickr_min_date: Time.zone.now,
+              flatpickr_enable_time: true,
+              flatpickr_time_24hr: true
+            }) %>
+          <%= reflex_tag('click->create_appointment', :button, 'Create', class: 'btn btn-black') %>
+        </div>
+      <% end %>
+    </td>
+  </tr>
+<% end %>

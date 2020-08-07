@@ -1,24 +1,63 @@
-# README
+## Setup:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Clone the repo:
 
-Things you may want to cover:
+```
+git clone git@github.com:guilherme-andrade/test_app.git
+cd recruitr
+```
 
-* Ruby version
+### Install all dependencies:
 
-* System dependencies
+```
+bundle install
+yarn install
+```
 
-* Configuration
+### Setup the Database
 
-* Database creation
+```
+rails db:create db:migrate db:seed
+```
+> 📝_The seeds replicate pretty much the whole application logic and are a good basis to understand how models are inter-connected._
 
-* Database initialization
+### Run the application
 
-* How to run the test suite
+```
+foreman start
+```
+> 📝_Foreman uses a simple Procfile configuration to start all required runtime processes, apart from the postgres database._
 
-* Services (job queues, cache servers, search engines, etc.)
+<hr>
 
-* Deployment instructions
+## Authentication:
 
-* ...
+Since I went for a full-stack Rails approach, I used a simple devise authentication scheme, with little to no modification. In the case the application was a simple API, I would've kept the authentication to a minimal JWT approach.
+
+
+### To log in
+
+```
+email: fake_hr@gmail.com
+password: 123456
+```
+
+
+## The Views:
+
+In this application the following libraries were used on top of ActionView:
+
+- `ViewComponent` - much like any other presenter, decorator library.
+- `StimulusJS` - Basecamp's lightweight JS framework
+- `StimulusReflex` - a rapidly growing Rails library based on Phoenix's Live View built on top of Morphdom, Stimulus and CableReady.
+- `ViewComponentReflex` - a library to add StimulusReflex to ViewComponents.
+
+These 4 libraries in conjunction make it so that the usual Rails views are better organized, and faster than a virtual DOM, at a fraction of the effort.
+
+
+## The Back End:
+
+Here I used:
+
+- `Interactor` - an improved service-like abstraction
+- `GoogleApiClient` - to access google calendar

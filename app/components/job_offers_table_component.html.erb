@@ -1,0 +1,28 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Position</th>
+      <th>Skills</th>
+      <th class="text-right">Applicants</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @job_offers.each do |job_offer| %>
+      <tr>
+        <td>
+          <%= link_to job_offer.name, job_offer %>
+        </td>
+        <td class="text-muted font-italic">
+          <%= job_offer.skill_list.each do |skill| %>
+            <span class="mr-2">#<%= skill %></span>
+          <% end %>
+        </td>
+        <td class="text-right">
+          <%= link_to job_offer.applications_count, job_offer %>
+          applicants
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,15 @@
+<h1>
+  <%= @job_offer.name %>
+</h1>
+
+<p class="lead text-muted font-italic">
+  <% @job_offer.skill_list.each do |skill| %>
+    <span class="mr-2">#<%= skill %></span>
+  <% end %>
+</p>
+
+<p class="lead">
+  <%= @job_offer.applicants.count %> applicants
+</p>
+
+<%= render JobOffers::ApplicationsTableComponent.new(job_offer: @job_offer) %>

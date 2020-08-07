@@ -1,0 +1,32 @@
+<h2>Applications</h2>
+<table class="table table-sm">
+  <thead>
+    <tr>
+      <th>
+        Job
+      </th>
+      <th>
+        Skills Required
+      </th>
+      <th class="text-right">
+        Candidate Match %
+      </th>
+      <th class="text-center">
+        Appointment scheduled?
+      </th>
+      <th>
+        Appointed Recruiter
+      </th>
+      <th class="text-right">
+        Recruiter Match %
+      </th>
+      <th class="text-right">
+        Appointment Schedule
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render(Applicants::ApplicationsTable::ApplicationComponent.with_collection(@applicant.applications)) %>
+  </tbody>
+</table>

@@ -12,6 +12,7 @@ require "action_mailbox/engine"
 require "action_text/engine"
 require "action_view/railtie"
 require "action_cable/engine"
+require "view_component/engine"
 # require "sprockets/railtie"
 # require "rails/test_unit/railtie"
 
@@ -28,6 +29,8 @@ module Recruitr
     end
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
+
+    config.active_job.queue_adapter = :sidekiq
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers

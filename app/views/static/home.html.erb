@@ -1,2 +1,11 @@
-<h1>Static#home</h1>
-<p>Find me in app/views/static/home.html.erb</p>
+
+<div class="pt-8">
+  <h1>
+    Welcome to Recruitr
+  </h1>
+  <p class="lead">
+    To get started, check out the currently open job offers
+  </p>
+
+  <%= link_to 'see job offers', job_offers_path, class: 'btn btn-lg btn-black' %>
+</div>

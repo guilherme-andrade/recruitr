@@ -1,0 +1,32 @@
+<%= link_to 'Back', job_offers_path, class: 'd-block mb-3' %>
+
+<%= render(JobOfferDetailsComponent.new(job_offer: @job_offer)) %>
+
+<hr class="mt-6 mb-6">
+
+<h2>Add an applicant</h2>
+
+<%= simple_form_for [@job_offer, @application] do |f| %>
+  <%= f.simple_fields_for :applicant_attributes do |af| %>
+    <%= af.input :first_name %>
+    <%= af.input :last_name %>
+    <%= af.input :angelist_profile_url %>
+    <%= af.input :linkedin_profile_url %>
+    <%= af.input :email %>
+    <%= af.input :skill_list, as: :check_boxes, collection: Applicant.skill_options %>
+  <% end %>
+  <%= f.submit 'Create Applicant', class: 'btn btn-black' %>
+<% end %>
+
+<br>
+<br>
+
+<%= simple_form_for [@job_offer, @application] do |f| %>
+  <%= f.input :applicant_id, as: :select, label_method: :full_name, collection: Applicant.all, label: 'Or pick an existing one' %>
+
+  <%= f.submit 'Add Applicant', class: 'btn btn-black' %>
+<% end %>
+
+<br>
+
+
