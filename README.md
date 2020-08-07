@@ -116,11 +116,26 @@ In my opinion, following files/folders:
 
 ## Given more time, what would I have done better?
 
-1. Add validations to models.
-2. Added seniority level to all [`Skillable`](https://github.com/guilherme-andrade/recruitr/blob/master/app/models/concerns/skillable.rb) models.
-3. Add flash messages for user feedback.
-4. Stub the GoogleApiServices so you could run it in your environment without my credentials - this I just forgot to be honest, would've been cool to do.
-5. The overall style is messy.
-6. Add some more context failures to interactors.
-7. Stub Mailers.
-8. Remove more unused files and gems - I used this [boilerplate](https://github.com/guilherme-andrade/boilerplates/tree/master/sheen) I created and, at first, I scaffolded some useless controllers which was a mistake.
+I realized now, that I spent maybe too much time on the Google Api stuff and that much time could have also been saved by not using interactors, since they ended up being so slim.
+
+Even worse than that was actually completely forgetting about the score card.
+
+### How I would've added score cards.
+
+1. Add another model called `Review` (or similar), that `belongs_to` to an `Applicant` and a `polymorphic` `reviewer` (that could be either a `User` (HR agent) or a `Recruiter`).
+2. This `Review` model would have the fields mentioned in the project brief `experience`, `dynamism`, `interest_in_the_company` as `Integer` fields.
+3. A virtual attribute `score_card` would be added to `Applicant` to hold the averages of each of these the `Review` fields.
+4. The `score_card` would be displayed in the `Applicants#show` using `GraphJS` and each `Review` created in `Reviews#new`.
+
+
+### Other things.
+
+3. Add validations to models.
+4. Added seniority level to all [`Skillable`](https://github.com/guilherme-andrade/recruitr/blob/master/app/models/concerns/skillable.rb) models.
+5. Added Applicant Scorecard to applicants, and views for post appointments.
+6. Add flash messages for user feedback.
+7. Stub the GoogleApiServices so you could run it in your environment without my credentials - this I just forgot to be honest, would've been cool to do.
+8. The overall style is messy.
+9. Add some more context failures to interactors.
+10. Stub Mailers.
+11. Remove more unused files and gems - I used this [boilerplate](https://github.com/guilherme-andrade/boilerplates/tree/master/sheen) I created and, at first, I scaffolded some useless controllers which was a mistake.
