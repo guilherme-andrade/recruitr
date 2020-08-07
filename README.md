@@ -96,7 +96,7 @@ The views are based on the screenshots from the project description and allow a 
 
 In the last point, I adapted the logic slightly, by automatically selecting the **available recruiter** that has the **most skills** in common with the Job Offer.
 
-This logic is present in the [`OrganizeAppointment`](https://github.com/guilherme-andrade/recruitr/blob/master/app/interactors/organize_appointment.rb) organizer and it's organizers.
+This logic is present in the [`OrganizeAppointment`](https://github.com/guilherme-andrade/recruitr/blob/master/app/interactors/organize_appointment.rb) organizer and it's interactors.
 
 
 <br>
