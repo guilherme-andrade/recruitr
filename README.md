@@ -103,8 +103,6 @@ This logic is present in the [`OrganizeAppointment`](https://github.com/guilherm
 
 ## Given more time, what would I have done better?
 
-> *These are things that are simple for the most part, and I made the choise to leave them out of the specs.*
-
 1. Add validations to models.
 2. Add flash messages for user feedback.
 3. Stub the GoogleApiServices so you could run it in your environment without my credentials - this I just forgot to be honest, would've been cool to do.
