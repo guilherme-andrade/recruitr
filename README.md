@@ -7,6 +7,8 @@ git clone git@github.com:guilherme-andrade/test_app.git
 cd recruitr
 ```
 
+<br>
+
 ### Install all dependencies:
 
 ```
@@ -14,12 +16,16 @@ bundle install
 yarn install
 ```
 
+<br>
+
 ### Setup the Database
 
 ```
 rails db:create db:migrate db:seed
 ```
 > 📝 *The seeds replicate pretty much the whole application logic, so `db/seeds.rb` is a good basis to understand the app.*
+
+<br>
 
 ### Run the application
 
@@ -36,6 +42,7 @@ foreman start
 
 Since I went for a full-stack Rails approach, I used a simple devise authentication scheme, with little to no modification. In the case the application was a simple API, I would've kept the authentication to a minimal JWT approach.
 
+<br>
 
 ### To log in
 
@@ -59,6 +66,7 @@ In this application the following libraries were used on top of ActionView:
 
 These 4 libraries in conjunction make it so that the usual Rails views are better organized, and faster than a virtual DOM, at a fraction of the effort.
 
+<br>
 
 ## The Back End:
 
