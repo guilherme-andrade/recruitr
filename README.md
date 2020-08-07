@@ -89,8 +89,11 @@ The views are based on the screenshots from the project description and allow a 
 - View all Job Offers.
 - Create a new Job Offer.
 - View a Job Offer and all its applications.
-- Add existing or new applicants for a job offer.
+- Add existing or new applicants to a job offer.
 - View a candidate and all its applications.
 - Create appointments between recruiters and applicants regarding a specific job offer.
+- Send Calendar invites to both the Recruiter and Applicant.
 
-In the last point, I adapted the logic slightly, by automatically selecting the **available recruiter** that suits the position the best, meaning that has the most skills in common with it.
+In the last point, I adapted the logic slightly, by automatically selecting the **available recruiter** that has the **most skills** in common with the Job Offer.
+
+This logic is present in the [`OrganizeAppointment`](https://github.com/guilherme-andrade/recruitr/blob/master/app/interactors/organize_appointment.rb) organizer and it's organizers.
