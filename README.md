@@ -3,7 +3,7 @@
 ### Clone the repo:
 
 ```
-git clone git@github.com:guilherme-andrade/test_app.git
+git clone git@github.com:guilherme-andrade/recruitr.git
 cd recruitr
 ```
 
@@ -74,3 +74,10 @@ Here I used:
 
 - `Interactor` - an improved service-like abstraction
 - `GoogleApiClient` - to access google calendar
+
+
+<br>
+
+## Demo
+
+

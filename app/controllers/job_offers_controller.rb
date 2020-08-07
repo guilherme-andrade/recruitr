@@ -8,7 +8,6 @@ class JobOffersController < AuthenticatedController
 
   # GET /job_offers/1
   def show
-    @application = Application.new
   end
 
   # GET /job_offers/new
