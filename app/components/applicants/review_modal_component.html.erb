@@ -1,5 +1,5 @@
 <div class="modal fade" id="<%= @id %>" tabindex="-1" aria-labelledby="<%= @id %>" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
+  <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-body p-5">
         <h2>Add Review</h2>
@@ -7,8 +7,49 @@
         <p class="text-muted">
           Please review the applicant on the following categories.
         </p>
+        <%= component_controller do %>
+          <% if @error %>
+            <p class="text-danger">
+              <%= @error %>
+            </p>
+          <% end %>
+
+          <div class="mb-4">
+            <p class="lead mb-2">
+              Reviewer
+            </p>
+            <div class="row">
+              <div class="col-6">
+                <%= reflex_tag(
+                  'change->update_reviewer',
+                  :select,
+                  class: 'form-select',
+                  value: to_reviewer_attributes_hash(@review.reviewer)
+                ) do %>
+                  <%= reviewer_options %>
+                <% end %>
+                <p class="small text-muted font-italic">
+                  Is this review yours or someone else's?
+                </p>
+              </div>
+            </div>
+          </div>
 
 
+          <% ScoreCard::REVIEW_ATTRIBUTES.each do |attribute| %>
+            <div class="mb-4">
+              <p class="lead mb-2">
+                <%= attribute.to_s.humanize %>
+              </p>
+
+              <div class="star-rating-input">
+                <%= raw stars_for(attribute) %>
+              </div>
+            </div>
+          <% end %>
+
+          <%= reflex_tag 'click->create_review', :button, 'Submit Review', class: 'btn btn-lg btn-primary' %>
+        <% end %>
       </div>
     </div>
   </div>

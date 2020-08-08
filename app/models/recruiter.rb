@@ -1,11 +1,7 @@
 class Recruiter < ApplicationRecord
   include Skillable
+  include Nameable
 
   has_many :appointments
-
-  validates :first_name, :last_name, presence: true
-
-  def full_name
-    [first_name, last_name].join(' ')
-  end
+  has_many :reviews, as: :reviewer
 end

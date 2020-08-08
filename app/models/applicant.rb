@@ -1,12 +1,14 @@
 class Applicant < ApplicationRecord
+  include Nameable
   include Skillable
 
   has_many :appointments
   has_many :applications
+  has_many :reviews
 
-  validates :first_name, :last_name, presence: true
+  def score_card
+    return @score_card if @score_card && saved_changes.blank?
 
-  def full_name
-    [first_name, last_name].join(' ')
+    @score_card = ScoreCard.new(applicant: self)
   end
 end

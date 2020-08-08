@@ -1,0 +1,39 @@
+.star-rating-input {
+  &:hover {
+    span {
+      svg {
+        fill: $warning;
+      }
+    }
+  }
+
+  svg {
+    pointer-events: none;
+  }
+
+  span {
+    svg {
+      fill: $gray;
+    }
+  }
+
+  span.active {
+    svg {
+      fill: $warning !important;
+    }
+  }
+
+  span:hover, span.active {
+    cursor: pointer;
+
+    svg {
+      fill: $warning;
+    }
+
+    & ~ span {
+      svg {
+        fill: $gray;
+      }
+    }
+  }
+}
