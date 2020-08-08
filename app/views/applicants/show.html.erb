@@ -7,3 +7,7 @@
 </p>
 
 <%= render Applicants::ApplicationsTableComponent.new(applicant: @applicant) %>
+
+<%= link_to 'New Review', '#', class: 'btn btn-primary', data: { toggle: 'modal', target: '#review-modal' } %>
+
+<%= render Applicants::ReviewModalComponent.new(applicant: @applicant, id: 'review-modal') %>

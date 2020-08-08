@@ -11,6 +11,8 @@ class Application < ApplicationRecord
   delegate :skill_list, :full_name, to: :applicant, prefix: true, allow_nil: true
   delegate :full_name, to: :appointed_recruiter, prefix: true, allow_nil: true
 
+  validates :applicant_id, uniqueness: { scope: :job_offer_id }
+
   def match_rate
     matching_skill_list = applicant_skill_list & job_offer_skill_list
     ((matching_skill_list.count.to_f / job_offer_skill_list.count) * 100).round

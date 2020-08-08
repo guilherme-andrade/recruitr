@@ -7,6 +7,7 @@ class CreateApplicants < ActiveRecord::Migration[6.0]
       t.string :linkedin_profile_url
       t.string :email
       t.integer :applications_count, default: 0
+      t.integer :seniority_level, default: 0
 
       t.timestamps
     end
