@@ -122,20 +122,20 @@ Even worse than that was actually completely forgetting about the score card.
 
 ### How I would've added score cards.
 
-[x] - Add another model called `Review` (or similar), that `belongs_to` to an `Applicant` and a `polymorphic` `reviewer` (that could be either a `User` (HR agent) or a `Recruiter`).
-[x] - This `Review` model would have the fields mentioned in the project brief `experience`, `dynamism`, `interest_in_the_company` as `Integer` fields.
-[x] - A virtual attribute `score_card` would be added to `Applicant` to hold the averages of each of these the `Review` fields.
-[x] - The `score_card` would be displayed in the `Applicants#show` using `GraphJS` and each `Review` created in `Reviews#new`.
+- [x] Add another model called `Review` (or similar), that `belongs_to` to an `Applicant` and a `polymorphic` `reviewer` (that could be either a `User` (HR agent) or a `Recruiter`).
+- [x] This `Review` model would have the fields mentioned in the project brief `experience`, `dynamism`, `interest_in_the_company` as `Integer` fields.
+- [x] A virtual attribute `score_card` would be added to `Applicant` to hold the averages of each of these the `Review` fields.
+- [x] The `score_card` would be displayed in the `Applicants#show` using `GraphJS` and each `Review` created in `Reviews#new`.
 
 
 ### Other things.
 
-[x] - Add validations to models.
-[] - Added seniority level to all [`Skillable`](https://github.com/guilherme-andrade/recruitr/blob/master/app/models/concerns/skillable.rb) models.
-[] - Added Applicant Scorecard to applicants, and views for post appointments.
-[] - Add flash messages for user feedback.
-[] - Stub the GoogleApiServices so you could run it in your environment without my credentials - this I just forgot to be honest, would've been cool to do.
-[] - The overall style is messy.
-[] - Add some more context failures to interactors.
-[] - Stub Mailers.
-[] - Remove more unused files and gems - I used this [boilerplate](https://github.com/guilherme-andrade/boilerplates/tree/master/sheen) I created and, at first, I scaffolded some useless controllers which was a mistake.
+- [x] Add validations to models.
+- [] Added seniority level to all [`Skillable`](https://github.com/guilherme-andrade/recruitr/blob/master/app/models/concerns/skillable.rb) models.
+- [] Added Applicant Scorecard to applicants, and views for post appointments.
+- [] Add flash messages for user feedback.
+- [] Stub the GoogleApiServices so you could run it in your environment without my credentials - this I just forgot to be honest, would've been cool to do.
+- [] The overall style is messy.
+- [] Add some more context failures to interactors.
+- [] Stub Mailers.
+- [] Remove more unused files and gems - I used this [boilerplate](https://github.com/guilherme-andrade/boilerplates/tree/master/sheen) I created and, at first, I scaffolded some useless controllers which was a mistake.
