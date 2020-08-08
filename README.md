@@ -127,6 +127,8 @@ Even worse than that was actually completely forgetting about the score card.
 - [x] A virtual attribute `score_card` would be added to `Applicant` to hold the averages of each of these the `Review` fields.
 - [x] The `score_card` would be displayed in the `Applicants#show` using `GraphJS` and each `Review` created in `Reviews#new`.
 
+> *[Edit on 08/08/2020] - Added some (still buggy) score cards, as you can see [here](https://www.loom.com/share/b54b7fbe56844caf88049fa66e3e0613))*
+
 
 ### Other things.
 
