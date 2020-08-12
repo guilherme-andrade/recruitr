@@ -1,0 +1,19 @@
+<%= component_controller do %>
+  <%= link_to 'Job Offers', job_offers_path %>
+  <div class="d-flex justify-content-between align-items-end">
+    <div>
+      <%= render Applicants::DetailsComponent.new(applicant: @applicant) %>
+    </div>
+
+    <div class="text-center">
+      <%= render Applicants::ScoreCardComponent.new(applicant: @applicant) %>
+      <%= reflex_tag('click->open_review_form', :button, 'New Review', class: 'btn btn-sm btn-primary') %>
+    </div>
+  </div>
+
+  <%= render Applicants::Reviews::FormComponent.new(applicant: @applicant, page_key: key) if review_form_open? %>
+  <%= render Applicants::Applications::TableComponent.new(applicant: @applicant) %>
+<% end %>
+
+
+

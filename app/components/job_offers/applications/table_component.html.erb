@@ -1,0 +1,36 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>
+        Applicant
+      </th>
+      <th>
+        Applicant skills
+      </th>
+
+      <th class="text-right">
+        Match %
+      </th>
+
+      <th class="text-center">
+        Appointment created?
+      </th>
+
+      <th class="text-center">
+        Recruiter
+      </th>
+
+      <th class="text-right">
+        Recruiter match %
+      </th>
+
+      <th class="text-right">
+        Appointment
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render(JobOffers::Applications::TableRowComponent.with_collection(@job_offer.applications)) %>
+  </tbody>
+</table>

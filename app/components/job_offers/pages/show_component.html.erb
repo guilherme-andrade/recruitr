@@ -1,0 +1,18 @@
+<%= component_controller do %>
+  <%= link_to 'Job Offers', job_offers_path %>
+  <div class="d-flex justify-content-between align-items-center">
+    <div>
+      <%= render JobOffers::DetailsComponent.new(job_offer: @job_offer) %>
+    </div>
+    <%= reflex_tag 'click->open_application_form', :button, 'Add an Applicant', class: 'btn btn-outline-primary' %>
+  </div>
+
+  <div id="applications-table">
+    <%= render JobOffers::Applications::TableComponent.new(job_offer: @job_offer) %>
+  </div>
+
+  <%= render JobOffers::Applications::FormComponent.new(job_offer: @job_offer, page_key: key) if application_form_open? %>
+<% end %>
+
+
+

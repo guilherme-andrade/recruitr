@@ -1,32 +1,21 @@
-<div class="modal fade" id="<%= @id %>" tabindex="-1" aria-labelledby="<%= @id %>" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
+<div class="modal fade show d-block" aria-hidden="false" style="overflow-y: auto;">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable" style="z-index: 1050; ">
+    <div class="modal-content mb-5">
       <div class="modal-body p-5">
-        <h2>Add Review</h2>
-
-        <p class="text-muted">
-          Please review the applicant on the following categories.
-        </p>
         <%= component_controller do %>
-          <% if @error %>
-            <p class="text-danger">
-              <%= @error %>
-            </p>
-          <% end %>
-
+          <h2>Add Review</h2>
+          <p class="text-muted">
+            Please review the applicant on the following categories.
+          </p>
           <div class="mb-4">
             <p class="lead mb-2">
               Reviewer
             </p>
+
             <div class="row">
               <div class="col-6">
-                <%= reflex_tag(
-                  'change->update_reviewer',
-                  :select,
-                  class: 'form-select',
-                  value: to_reviewer_attributes_hash(@review.reviewer)
-                ) do %>
-                  <%= reviewer_options %>
+                <%= reflex_tag('change->update_reviewer', :select, class: 'form-select', value: to_reviewer_attributes_hash(@review.reviewer)) do %>
+                  <%= option_groups_from_collection_for_select(Review.reviewer_options, :all, :to_s, lambda(&method(:to_reviewer_attributes_hash)), :full_name, to_reviewer_attributes_hash(@review.reviewer)) %>
                 <% end %>
                 <p class="small text-muted font-italic">
                   Is this review yours or someone else's?
@@ -34,7 +23,6 @@
               </div>
             </div>
           </div>
-
 
           <% ScoreCard::REVIEW_ATTRIBUTES.each do |attribute| %>
             <div class="mb-4">
@@ -53,4 +41,5 @@
       </div>
     </div>
   </div>
+  <%= reflex_tag 'click->close', :div, '', class: 'modal-backdrop', style: 'opacity: 0.7;' %>
 </div>

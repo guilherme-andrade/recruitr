@@ -1,8 +1,12 @@
-class JobOffers::ApplicationsTable::ApplicationComponent < ViewComponentReflex::Component
-  def initialize(application:)
-    @application = application
-    @appointment ||= application.appointment || application.build_appointment
+class JobOffers::Applications::TableRowComponent < ViewComponentReflex::Component
+  def initialize(table_row:)
+    @application = table_row
+    @appointment ||= @application.appointment || @application.build_appointment
     @appointment_start_time = nil
+  end
+
+  def render?
+    @application.persisted?
   end
 
   def collection_key

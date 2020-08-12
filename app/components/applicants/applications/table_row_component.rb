@@ -1,7 +1,7 @@
-class Applicants::ApplicationsTable::ApplicationComponent < ViewComponentReflex::Component
-  def initialize(application:)
-    @application = application
-    @appointment ||= application.appointment || application.build_appointment
+class Applicants::Applications::TableRowComponent < ViewComponentReflex::Component
+  def initialize(table_row:)
+    @application = table_row
+    @appointment ||= @application.appointment || @application.build_appointment
     @appointment_start_time = nil
   end
 

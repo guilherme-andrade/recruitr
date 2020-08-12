@@ -5,17 +5,14 @@ import Chart from 'chart.js'
 export default class extends Controller {
   connect() {
     StimulusReflex.register(this)
-
     this.load();
     this.addReloadListener();
   }
 
   addReloadListener() {
     // Reloads when a new review is succesfully created
-    document.addEventListener('stimulus-reflex:before', event => {
-      if (event.detail.reflex == 'Applicants::ReviewModalComponent#create_review') {
-        this.load();
-      }
+    this.element.addEventListener('cable-ready:after-set-attribute', e => {
+      console.log(e);
     })
   }
 
@@ -26,6 +23,7 @@ export default class extends Controller {
   }
 
   load() {
+    if (this.chart) { this.chart.destroy(); }
     this.chart = new Chart(this.element, {
       type: this.type,
       data: {

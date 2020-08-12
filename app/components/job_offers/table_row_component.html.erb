@@ -1,0 +1,17 @@
+<%= component_controller do %>
+  <tr id="job-offer-<%= collection_key %>">
+    <td>
+      <%= link_to @job_offer.name, @job_offer %>
+    </td>
+
+    <td>
+      <%= @job_offer.skill_list.each do |skill| %>
+        <span class="mr-2">#<%= skill %></span>
+      <% end %>
+    </td>
+
+    <td class="text-right">
+      <%= @job_offer.applications_count %> applications
+    </td>
+  </tr>
+<% end %>

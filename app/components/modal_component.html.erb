@@ -1,0 +1,17 @@
+<%= component_controller do %>
+  <div class="modal fade <%= 'show' unless show? %>" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content p-5">
+        <div class="modal-header">
+          <%= @header %>
+        </div>
+        <div class="modal-body">
+          <%= @content %>
+        </div>
+        <div class="modal-footer">
+          <%= @footer %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

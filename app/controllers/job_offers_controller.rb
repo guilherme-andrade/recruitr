@@ -1,13 +1,14 @@
 class JobOffersController < AuthenticatedController
-  before_action :set_job_offer, only: [:show, :edit, :update, :destroy]
+  before_action :set_job_offer, only: [:edit, :update, :destroy]
 
   # GET /job_offers
   def index
-    @job_offers = JobOffer.all
+    render inline: render_to_string(JobOffers::Pages::IndexComponent.new), layout: 'application'
   end
 
   # GET /job_offers/1
   def show
+    render inline: render_to_string(JobOffers::Pages::ShowComponent.new), layout: 'application'
   end
 
   # GET /job_offers/new

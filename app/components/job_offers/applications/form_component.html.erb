@@ -1,0 +1,64 @@
+<div class="modal fade show d-block" aria-hidden="false" style="overflow-y: auto;">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable" style="z-index: 1050; ">
+    <div class="modal-content mb-5">
+      <div class="modal-body p-5">
+        <%= component_controller do %>
+          <h2>Add an applicant</h2>
+
+          <hr>
+          <p class="mb-3">
+            Please fill in the following details:
+          </p>
+
+          <div class="row">
+            <div class="col-6">
+              <%= reflex_tag 'change->update_applicant_field', :input, '', name: 'first_name', class: 'form-control mb-3', placeholder: 'first name', value: @applicant.first_name %>
+              <%= content_tag(:span, @applicant.errors.messages[:first_name].first, class: 'invalid-feedback d-block') if @applicant.errors.messages[:first_name].first %>
+            </div>
+
+            <div class="col-6">
+              <%= reflex_tag 'change->update_applicant_field', :input, '', name: 'last_name', class: 'form-control mb-3', placeholder: 'last name', value: @applicant.last_name %>
+              <%= content_tag(:span, @applicant.errors.messages[:last_name].first, class: 'invalid-feedback d-block') if @applicant.errors.messages[:last_name].first %>
+            </div>
+          </div>
+
+          <%= reflex_tag 'change->update_applicant_field', :input, '', name: 'email', class: 'form-control mb-3', placeholder: 'email', value: @applicant.email %>
+          <%= content_tag(:span, @applicant.errors.messages[:email].first, class: 'invalid-feedback d-block') if @applicant.errors.messages[:email].first %>
+
+          <%= reflex_tag 'change->update_applicant_field', :input, '', name: 'angelist_profile_url', class: 'form-control mb-3', placeholder: 'angelist profile', value: @applicant.angelist_profile_url %>
+          <%= content_tag(:span, @applicant.errors.messages[:angelist_profile_url].first, class: 'invalid-feedback d-block') if @applicant.errors.messages[:angelist_profile_url].first %>
+
+          <%= reflex_tag 'change->update_applicant_field', :input, '', name: 'linkedin_profile_url', class: 'form-control mb-3', placeholder: 'linkedin profile', value: @applicant.linkedin_profile_url %>
+          <%= content_tag(:span, @applicant.errors.messages[:linkedin_profile_url].first, class: 'invalid-feedback d-block') if @applicant.errors.messages[:linkedin_profile_url].first %>
+
+          <div class="mb-3">
+            <p class="mb-3">
+              Skills:
+            </p>
+            <% Applicant.skill_options.each do |skill| %>
+              <div class="form-check">
+                <%= reflex_tag 'change->add_skill', :input, '', type: 'checkbox', class: 'form-check-input', name: skill, checked: @applicant.skill_list.include?(skill) %>
+                <label for="<%= skill %>" class="form-check-label">
+                  <%= skill %>
+                </label>
+              </div>
+            <% end %>
+          </div>
+
+
+          <%= reflex_tag 'click->create_applicant', :button, 'Save', class: 'btn btn-primary'  %>
+
+          <hr>
+          <p class="mb-2">
+            Or select an already created applicant:
+          </p>
+          <%= reflex_tag 'change->select_applicant', :select, name: 'applicant_id', class: 'form-select mb-3', prompt: 'or select an applicant' do %>
+            <%= options_from_collection_for_select(Applicant.all, :id, :full_name, selected: @applicant) %>
+          <% end %>
+          <%= content_tag(:span, @application.errors.messages[:applicant_id].first, class: 'invalid-feedback d-block') if @application.errors.messages[:applicant_id].first %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <%= reflex_tag 'click->close', :div, '', class: 'modal-backdrop', style: 'opacity: 0.7;'  %>
+</div>

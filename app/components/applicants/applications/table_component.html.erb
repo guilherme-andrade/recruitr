@@ -6,16 +6,16 @@
         Job
       </th>
       <th>
-        Skills Required
+        Skills
       </th>
       <th class="text-right">
-        Candidate Match %
+        Match %
       </th>
       <th class="text-center">
-        Appointment scheduled?
+        Scheduled?
       </th>
-      <th>
-        Appointed Recruiter
+      <th class="text-center">
+        Recruiter
       </th>
       <th class="text-right">
         Recruiter Match %
@@ -27,6 +27,6 @@
   </thead>
 
   <tbody>
-    <%= render(Applicants::ApplicationsTable::ApplicationComponent.with_collection(@applicant.applications)) %>
+    <%= render(Applicants::Applications::TableRowComponent.with_collection(@applicant.applications)) %>
   </tbody>
 </table>

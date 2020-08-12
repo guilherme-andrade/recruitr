@@ -1,12 +1,12 @@
 <%= link_to 'Back', job_offers_path, class: 'd-block mb-3' %>
 
-<%= render(JobOfferDetailsComponent.new(job_offer: @job_offer)) %>
+<%= render(JobOffers::DetailsComponent.new(job_offer: @job_offer)) %>
 
 <hr class="mt-6 mb-6">
 
 <%= link_to 'New Application', '#', class: 'btn btn-primary', data: { toggle: 'modal', target: '#application-modal' } %>
 
-<%= render(JobOffers::ApplicationModalComponent.new(job_offer: @job_offer, id: 'application-modal')) %>
+<%= render(JobOffers::ApplicationModalComponent.new(job_offer: @job_offer)) %>
 
 <br>
 

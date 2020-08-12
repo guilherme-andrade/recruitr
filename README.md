@@ -40,7 +40,7 @@ foreman start
 
 ## Authentication:
 
-Since I went for a full-stack Rails approach, I used a simple devise authentication scheme, with little to no modification. In the case the application was a simple API, I would've kept the authentication to a minimal JWT approach.
+Since I went for a full-stack Rails approach, I used a simple devise authentication scheme, with little to no modification. In the case the application was a simple API, I would've kept the authentication to a minimal JWT strategy.
 
 <br>
 

@@ -1,0 +1,10 @@
+<canvas
+  class="d-block"
+  id="chart"
+  data-controller="charts"
+  data-charts-type="radar"
+  data-charts-labels="<%= @applicant.score_card&.to_chart_labels %>"
+  data-charts-datasets="<%= @applicant.score_card&.to_chart_datasets %>"
+  width="400"
+  heigh="300"
+></canvas>

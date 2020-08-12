@@ -19,7 +19,7 @@ class ScoreCard
   end
 
   def to_chart_labels
-    REVIEW_ATTRIBUTES.to_json
+    REVIEW_ATTRIBUTES.map(&:to_s).map(&:humanize).to_json
   end
 
   def to_chart_datasets

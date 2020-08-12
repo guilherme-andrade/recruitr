@@ -1,0 +1,6 @@
+<h1><%= @applicant.full_name %></h1>
+<p class="lead text-muted font-italic">
+  <% @applicant.skill_list.each do |skill| %>
+    <span class="mr-2">#<%= skill %></span>
+  <% end %>
+</p>

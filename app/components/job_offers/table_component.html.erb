@@ -1,0 +1,13 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Position</th>
+      <th>Skills</th>
+      <th class="text-right">Applicants</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render(JobOffers::TableRowComponent.with_collection(@job_offers)) %>
+  </tbody>
+</table>

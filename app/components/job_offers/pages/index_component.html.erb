@@ -1,9 +1,6 @@
-
-
 <h1>Job Offers</h1>
 
-<%= render(JobOffersTableComponent.new(job_offers: @job_offers)) %>
-
+<%= render(JobOffers::TableComponent.new(job_offers: @job_offers)) %>
 <br>
 
 <%= link_to 'New Job Offer', new_job_offer_path, class: 'btn btn-primary' %>
